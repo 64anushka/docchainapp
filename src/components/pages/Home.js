@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/Home.css"
-import Cost from "../assets/cost.png"
+import Cost from "../assets/cost .png"
 import DocImage from "../assets/document.png"
 import Time from "../assets/time.png"
 import Team from "../assets/team.jpg"
