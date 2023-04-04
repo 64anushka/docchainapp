@@ -21,7 +21,6 @@ function App() {
   const [contract_upload, setContractUpload] = useState(null);
   useEffect(() => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
-    
     const loadProvider = async () => {
       if (provider) {
         window.ethereum.on("chainChanged", () => {
