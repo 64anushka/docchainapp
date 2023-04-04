@@ -78,7 +78,7 @@ const Upload = ({contract, account, provider}) => {
                         onClick={handleClick}>
                         Upload File
                     </button>
-                    <Spinner showGif={showGif}/>
+                    {/* <Spinner showGif={showGif}/> */}
                 </form>
                 <div id="result"></div>
             </div>
