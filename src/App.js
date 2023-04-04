@@ -9,7 +9,7 @@ import {
   Route,
 } from "react-router-dom";
 import { useState, useEffect } from "react";
-const ethers = require("ethers");
+import { ethers } from "ethers";
 import HomePage from './components/pages/Home';
 
 
