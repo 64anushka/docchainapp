@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../css/Display.css';
 const Display = ({ contract, account }) => {
   const [data, setData] = useState("");
   const getdata = async () => {
@@ -42,7 +43,19 @@ const Display = ({ contract, account }) => {
   };
   return (
     <center>
-     
+     <div className="top">
+            
+      {/* <input
+        type="text"
+        placeholder="Enter Address"
+        id="address"
+        className="textField"
+      ></input> */}
+      <button className="button" onClick={getdata}>
+        Display
+      </button>
+      <div className="image-list">{data}</div>
+    </div>
     </center>
   );
 };
