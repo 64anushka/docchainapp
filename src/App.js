@@ -8,6 +8,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { ethers } from "ethers";
 import HomePage from './components/pages/Home';
 
 
