@@ -32,8 +32,6 @@ const Exporter = ({ contract, account, provider }) => {
         } catch (e) {
             document.getElementById("result").innerHTML = "Only Admin Can Perform This Action";
         }
-
-
     }
     const deleteExporter = async (e) => {
         e.preventDefault();
