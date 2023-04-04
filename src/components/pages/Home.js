@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/home.css"
+import "../css/Home.css"
 import Cost from "../assets/cost.png"
 import DocImage from "../assets/document.png"
 import Time from "../assets/time.png"
