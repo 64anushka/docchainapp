@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import HomePage from './components/pages/Home';
+import HomePage from './components/pages/home';
 
 
 function App() {
@@ -36,19 +36,19 @@ function App() {
         setAccount(address);
         // const bal = await address.getBalance();
         // setBalance(bal);
-        let contractAddress = "0x07bd6278Fb9e5851fC381e18EC551470E28002d0";
+        let contractAddress = "0x93ced2F262A4959fC16133f11F0d82282AB203AD";
         const abi = [
+          {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+          },
           {
             "inputs": [
               {
                 "internalType": "address",
-                "name": "_address",
+                "name": "_exporter",
                 "type": "address"
-              },
-              {
-                "internalType": "string",
-                "name": "_name",
-                "type": "string"
               }
             ],
             "name": "addExporter",
@@ -70,42 +70,6 @@ function App() {
             "type": "function"
           },
           {
-            "inputs": [
-              {
-                "internalType": "address",
-                "name": "_address",
-                "type": "address"
-              }
-            ],
-            "name": "deleteExporter",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-          },
-          {
-            "inputs": [
-              {
-                "internalType": "address",
-                "name": "_address",
-                "type": "address"
-              },
-              {
-                "internalType": "string",
-                "name": "_name",
-                "type": "string"
-              }
-            ],
-            "name": "editExporter",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-          },
-          {
-            "inputs": [],
-            "stateMutability": "nonpayable",
-            "type": "constructor"
-          },
-          {
             "inputs": [],
             "name": "admin",
             "outputs": [
@@ -113,19 +77,6 @@ function App() {
                 "internalType": "address",
                 "name": "",
                 "type": "address"
-              }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-          },
-          {
-            "inputs": [],
-            "name": "documentCount",
-            "outputs": [
-              {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
               }
             ],
             "stateMutability": "view",
@@ -143,26 +94,8 @@ function App() {
             "outputs": [
               {
                 "internalType": "bool",
-                "name": "exists",
-                "type": "bool"
-              },
-              {
-                "internalType": "string",
-                "name": "name",
-                "type": "string"
-              }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-          },
-          {
-            "inputs": [],
-            "name": "getDocumentCount",
-            "outputs": [
-              {
-                "internalType": "uint256",
                 "name": "",
-                "type": "uint256"
+                "type": "bool"
               }
             ],
             "stateMutability": "view",
@@ -185,6 +118,19 @@ function App() {
               }
             ],
             "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "_exporter",
+                "type": "address"
+              }
+            ],
+            "name": "removeExporter",
+            "outputs": [],
+            "stateMutability": "nonpayable",
             "type": "function"
           },
           {
@@ -213,7 +159,7 @@ function App() {
           signer
         );
 
-        let contractAddress_upload = "0xd3d56Fe44BE205Ad2ee43ACD87926c4657e4CB5f";
+        let contractAddress_upload = "0x49221DE4fbDF1B40D17b70b2Fcfe310b5f7fE7aE";
         const abi_upload=[
           {
             "inputs": [
@@ -310,8 +256,8 @@ function App() {
           signer
         );
         setContractUpload(contract_upload);
-        console.log(contract);
-        console.log(provider._network.name);
+        //console.log(contract);
+        //console.log(provider._network.name);
         setNetwork(provider._network.name);
         setContract(contract);
         setProvider(provider);
@@ -330,6 +276,8 @@ function App() {
           <Routes>
             <Route exact path="/navbar" element={<Navbar />}>
             </Route>
+            <Route exact path="/" element={<HomePage />}>
+            </Route>
             <Route exact path="/home" element={<HomePage />}>
             </Route>
             <Route exact path="/upload" element={<Upload
@@ -343,6 +291,7 @@ function App() {
       account={account}
       ></Display>}>
             </Route>
+            <Route exact path="/exporter"></Route>
             <Route exact path="/admin" element={<Exporter
           account={account}
           provider={provider}
