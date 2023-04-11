@@ -81,4 +81,7 @@ return (
         </div>
     </center>
 
-);
+)
+
+};
+export default Verify;
