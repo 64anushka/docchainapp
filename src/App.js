@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import HomePage from './components/pages/home';
+import HomePage from './components/pages/Home';
 
 
 function App() {
